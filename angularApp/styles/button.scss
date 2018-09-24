@@ -1,0 +1,32 @@
+.btn{
+  font-size: 1.4rem;
+  padding: .4rem 1rem;
+
+ .icon,
+ .fa{
+      margin-right: .5rem;
+  }
+
+}
+.btn-icon{
+  border:none;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  >*+*{
+      margin-left: 1rem;
+  }
+}
+
+.form-actions{
+  display: flex;
+  margin-top: 3rem;
+
+  .btn+.btn{
+      margin-left: 1.2rem;
+  }
+
+  &.right{
+    justify-content: flex-end;
+  }
+}

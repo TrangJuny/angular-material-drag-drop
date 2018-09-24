@@ -1,0 +1,14 @@
+<div [formGroup]="form" class="form-group" [ngSwitch]="control.controlType"  [ngClass]="form.value[control.key]==''?'empty':'has-value'">
+
+      <input *ngSwitchCase="'textbox'" [formControlName]="control.key" class="form-control"
+              [id]="control.key" [type]="control.type">
+  
+      <select *ngSwitchCase="'dropdown'" [id]="control.key" [formControlName]="control.key" class="form-control">
+        <option *ngFor="let opt of control.options" [value]="opt.key">{{opt.value}}</option>
+      </select>  
+
+    <label [attr.for]="control.key" class="control-label">{{control.label}}</label>
+  
+  
+    <div class="error" *ngIf="!isValid">{{control.label}} is required</div>
+  </div>
