@@ -1,5 +1,11 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css'; 
+
+// fonts
+// @import "fonts.scss";
+@import "validate.scss";
 @import "general.scss";
 @import "form.scss";
 @import "button.scss";
 
 @import "sidenav.scss";
+@import "tab.scss";

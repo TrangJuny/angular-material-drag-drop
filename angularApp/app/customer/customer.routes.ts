@@ -2,7 +2,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { CustomerComponent } from './customer-component/customer.component';
 import { CustomerDetailComponent } from './customer-detail-component/customer-detail.component';
-import { NewCustomerComponent } from './customer-new-component/new.customer.component';
+import { NewCustomerComponent } from './customer-new-component/customer-new-component';
 
 const routes: Routes = [
     { path: '', component: CustomerComponent },

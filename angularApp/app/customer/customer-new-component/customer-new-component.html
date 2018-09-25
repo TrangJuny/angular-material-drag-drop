@@ -1,0 +1,143 @@
+﻿<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+<div class="tab-panel bg-white">
+    <h2 class="title-tab-panel">Create New</h2>
+    <mat-tab-group>
+        <mat-tab label="Customer information"> 
+            <ng-template matTabContent>
+                <div class="content-tab-title">Customer information</div>
+
+                <div class="d-flex">
+                    <div class="col-4">
+                        <div class="update-img">
+                            <div class="fa fa-plus"></div>
+                            <span class="title">Update Loge</span>
+                            <p class="sub-text">300x300px & *.PNG Recommended</p>
+                        </div>
+
+                    </div>
+                    <div class="col-8">        
+                        <form [formGroup]="profileForm" (ngSubmit)="onSubmit2()">
+
+                            <div class="form-group" [ngClass]="profileForm.controls.companyName.value==''?'empty':'has-value'">
+                                <input type="text" formControlName="companyName" class="form-control">                            
+                                <label class="control-label">
+                                    Company name 
+                                </label>
+                                <app-error-validate [control]="profileForm.controls.companyName"></app-error-validate>
+                                <div class="error" *ngIf="isValid">{{control.label}} is required</div>
+                            </div>
+
+                            <div class="form-group" [ngClass]="profileForm.controls.president.value==''?'empty':'has-value'">
+                                <input type="text" formControlName="president" class="form-control">
+                                <label class="control-label">
+                                    President
+                                </label>
+                            </div>
+
+                            <div class="form-group form-check" [ngClass]="profileForm.controls.headQuater.value==''?'empty':'has-value'">
+                                <input type="checkbox" class="form-check-input" id="headQuater" formControlName="headQuater">
+                                <label class="form-check-label" for="headQuater">Check me out</label>
+                            </div>
+                            <div class="form-group" [ngClass]="profileForm.controls.website.value==''?'empty':'has-value'">
+                                <input type="text" formControlName="website" class="form-control">
+                                <label class="control-label">
+                                    Website
+                                </label>
+                            </div>
+                            <div class="form-group" [ngClass]="profileForm.controls.email.value==''?'empty':'has-value'">
+                                <input type="text" formControlName="email" class="form-control">
+                                <label class="control-label">
+                                    Email
+                                </label>
+                            </div>
+                            <div class="form-group" [ngClass]="profileForm.controls.description.value==''?'empty':'has-value'">
+                                <input type="text" formControlName="description" class="form-control">
+                                <label class="control-label">
+                                    Description
+                                </label>
+                            </div>
+                            
+                           
+                            
+                            <div formGroupName="addressContact">
+                                <h3 class="title-line">Address & contact</h3>
+                            
+                                <div class="form-group" [ngClass]="profileForm.controls['addressContact'].value['address1']==''?'empty':'has-value'">
+                                    <input type="text" formControlName="address1" class="form-control">
+                                    <label class="control-label">
+                                        Address 1
+                                    </label>
+                                </div>
+                                <div class="form-group" [ngClass]="profileForm.controls['addressContact'].value['address2']==''?'empty':'has-value'">
+                                    <input type="text" formControlName="address2" class="form-control">
+                                    <label class="control-label">
+                                        Address 2
+                                    </label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group" [ngClass]="profileForm.controls['addressContact'].value['country']==''?'empty':'has-value'">
+                                            <input type="text" formControlName="country" class="form-control">
+                                            <label class="control-label">
+                                                Country
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">                                    
+                                        <div class="form-group" [ngClass]="profileForm.controls['addressContact'].value['state']==''?'empty':'has-value'">
+                                            <input type="text" formControlName="state" class="form-control">
+                                            <label class="control-label">
+                                                State/Province
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">                                                                      
+                                        <div class="form-group" [ngClass]="profileForm.controls['addressContact'].value['zip']==''?'empty':'has-value'">
+                                            <input type="text" formControlName="zip" class="form-control">
+                                            <label class="control-label">
+                                                ZIP/Postal code
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">                                                                      
+                                        <div class="form-group" [ngClass]="profileForm.controls['addressContact'].value['phone']==''?'empty':'has-value'">
+                                            <input type="text" formControlName="phone" class="form-control">
+                                            <label class="control-label">
+                                                Phone number
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">                                                                      
+                                        <div class="form-group" [ngClass]="profileForm.controls['addressContact'].value['faxNumber']==''?'empty':'has-value'">
+                                            <input type="text" formControlName="faxNumber" class="form-control">
+                                            <label class="control-label">
+                                                Phone number
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                           <div class="action-container right">
+                                <button class="btn btn-default" type="submit">Cancel</button>
+                                <button class="btn btn-primary" type="submit">Next</button>
+                           </div>
+
+                        </form>
+                        {{ profileForm.value | json }}
+                        <div *ngIf="payLoad">
+                            <strong>Saved the following values</strong><br>{{payLoad}}
+                        </div>
+                    </div>
+                </div>
+            </ng-template>            
+        </mat-tab>
+        <mat-tab label="Payment information"> 
+            <ng-template matTabContent>
+                The First Content
+            </ng-template>
+        </mat-tab>
+    </mat-tab-group>
+</div>  
+

@@ -1,5 +1,5 @@
 .form-group{
-    margin-bottom: 1.5rem;
+    margin-bottom: 3rem;
     position: relative;
     
     .form-control{
@@ -23,7 +23,11 @@
         color: rgb(65,65,65);
       }
     }
-  
+    &:focus .control-label{
+      top: 1.1rem;
+      font-size: 1rem;
+      color: rgb(65,65,65);
+    }
     &.has-value .control-label {
       top: 1.1rem;
       font-size: 1rem;
@@ -62,4 +66,8 @@
     &.no-label .form-control{
       padding-top: .6rem;
     }
-  }
+}
+// checkbox
+.form-check-label {
+  margin-left: 1rem;
+}

@@ -10,12 +10,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CustomerColumnOptionsComponent } from './column-options-component/column-options.component';
 import { ColumnOptionsRowComponent } from './column-options-component/row/column-options-row.component';
-import { NewCustomerComponent } from './customer-new-component/new.customer.component';
+import { NewCustomerComponent } from './customer-new-component/customer-new-component';
 import { AppControlComponent } from '../shared/components/common-control/control-view/control.component';
-
+import { ErrorvalidateComponent } from '../shared/components/common-control/error-validate/error-validate-component';
+import {MatTabsModule} from '@angular/material/tabs';
 import { DndModule } from 'ngx-drag-drop';
-import * as MaterialModule from '@angular/material';
-// import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatCardModule } from '@angular/material';
+
 @NgModule({
     imports: [
         CommonModule,
@@ -26,7 +26,7 @@ import * as MaterialModule from '@angular/material';
         NgbModule,
         ReactiveFormsModule,
         DndModule,
-        MaterialModule
+        MatTabsModule
     ],
     declarations: [
         CustomerComponent,
@@ -34,7 +34,8 @@ import * as MaterialModule from '@angular/material';
         CustomerColumnOptionsComponent,
         ColumnOptionsRowComponent,
         NewCustomerComponent,
-        AppControlComponent
+        AppControlComponent,
+        ErrorvalidateComponent
     ],
 })
 

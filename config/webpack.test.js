@@ -39,6 +39,13 @@ module.exports = {
       {
         test: /\.html$/,
         use: 'raw-loader'
+      },
+      {
+        test: /\.(png|jpg|gif|woff|woff2|ttf|svg|eot)$/,
+        use: 'file-loader?name=assets/[name]-[hash:6].[ext]',
+        parser: {
+          system: true
+        }
       }
     ],
     exprContextCritical: false

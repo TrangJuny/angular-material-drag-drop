@@ -1,0 +1,82 @@
+@font-face {
+    font-family: 'SourceSansPro-Black';
+    src:  url('./SourceSansPro-Black.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'SourceSansPro-BlackItalic';
+    src:  url('./SourceSansPro-BlackItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'SourceSansPro-Bold';
+    src:  url('./SourceSansPro-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SourceSansPro-BoldItalic';
+    src:  url('./SourceSansPro-BoldItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SourceSansPro-ExtraLight';
+    src:  url('./SourceSansPro-ExtraLight.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SourceSansPro-ExtraLightItalic';
+    src:  url('./SourceSansPro-ExtraLightItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SourceSansPro-Italic';
+    src:  url('./SourceSansPro-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SourceSansPro-Light';
+    src:  url('./SourceSansPro-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SourceSansPro-LightItalic';
+    src:  url('./SourceSansPro-LightItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SourceSansPro-Regular';
+    src:  url('./SourceSansPro-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SourceSansPro-Semibold';
+    src:  url('./SourceSansPro-Semibold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SourceSansPro-SemiboldItalic';
+    src:  url('./SourceSansPro-SemiboldItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

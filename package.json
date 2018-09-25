@@ -3,14 +3,14 @@
   "version": "5.0.6",
   "description": "Xin App",
   "main": "product/index.html",
-  "author": "TrangThai",
+  "author": "ThangTrinh",
   "license": "ISC",
   "repository": {
     "type": "git",
     "url": ""
   },
   "scripts": {
-    "start": "concurrently \"webpack-dev-server --env=dev --open --hot --inline --port 8080\" \"dotnet run\" ",
+    "start": "webpack-dev-server --env=dev --open --hot --inline --port 8080",
     "webpack-dev": "webpack --env=dev",
     "webpack-production": "webpack --env=prod",
     "build-dev": "npm run webpack-dev",
@@ -25,12 +25,14 @@
   "dependencies": {
     "@angular-devkit/core": "0.8.1",
     "@angular/animations": "6.1.7",
+    "@angular/cdk": "^6.4.7",
     "@angular/common": "6.1.7",
     "@angular/compiler": "6.1.7",
     "@angular/compiler-cli": "6.1.7",
     "@angular/core": "6.1.7",
     "@angular/forms": "6.1.7",
     "@angular/http": "6.1.7",
+    "@angular/material": "6.4.7",
     "@angular/platform-browser": "6.1.7",
     "@angular/platform-browser-dynamic": "6.1.7",
     "@angular/platform-server": "6.1.7",
@@ -54,8 +56,11 @@
     "core-js": "2.5.7",
     "font-awesome": "^4.7.0",
     "ie-shim": "0.1.0",
+    "ngx-drag-drop": "1.1.0",
+    "parse5": "5.1.0",
     "rxjs": "6.3.2",
     "rxjs-compat": "6.3.2",
+    "tslib": "1.9.3",
     "zone.js": "0.8.26"
   },
   "devDependencies": {

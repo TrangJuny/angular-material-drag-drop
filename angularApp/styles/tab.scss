@@ -1,0 +1,47 @@
+.tab-panel{
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+
+      .title-tab-panel{
+            position: absolute;
+            top: 0;
+            left: 7rem;
+            height: 9.5rem;
+            display: flex;
+            align-items: center;
+            z-index: 9;
+            font-size: 2.8rem;
+            font-weight: 300;
+            color:#000;
+      }
+
+      .mat-tab-label {
+            height: 9.5rem;
+            padding: 0 2rem;
+            font-weight: 600;
+      }
+  
+      .mat-tab-label+.mat-tab-label {
+            margin-left: 3rem;
+      }
+  
+      .mat-tab-labels {
+            padding-left: 30%;
+      }
+    
+      .mat-tab-header {
+            border: none;
+            background: #fafafa;
+      }
+
+      .mat-tab-group.mat-primary .mat-ink-bar, 
+      .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+            background-color: #d70000;
+            height: 3px;
+      }
+
+      .mat-tab-body-wrapper {
+            padding: 6rem;
+      }
+}
