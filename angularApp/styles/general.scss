@@ -20,7 +20,9 @@ body{
   font-weight: 600;
   font-size: 1.6rem;
 
-  .line {
+  &:after {
+    content:'';
+    content:'';
     height: 1px;
     background: #ddd;
     flex-grow: 1;

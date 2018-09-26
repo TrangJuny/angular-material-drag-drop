@@ -2,7 +2,9 @@
       position: relative;
       border-radius: 4px;
       overflow: hidden;
-
+      .mat-tab-list{
+            padding: 0 6rem;
+      }
       .title-tab-panel{
             position: absolute;
             top: 0;
@@ -27,7 +29,7 @@
       }
   
       .mat-tab-labels {
-            padding-left: 30%;
+            padding-left: 34.333%;
       }
     
       .mat-tab-header {
@@ -41,7 +43,7 @@
             height: 3px;
       }
 
-      .mat-tab-body-wrapper {
+      .mat-tab-body-content {
             padding: 6rem;
       }
 }

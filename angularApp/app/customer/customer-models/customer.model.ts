@@ -17,7 +17,7 @@ export class Customer {
   public PaymentMethod: string;
   public Description: string;
   public BankAccount: {
-    publicBankName: string;
+    BankName: string;
     BankAddress: string;
     AccountName: string;
     AccountAddress: string;
@@ -46,7 +46,7 @@ export class Customer {
     this.PaymentMethod =  "";
     this.Description =  "";
     this.BankAccount =  {
-      publicBankName: "",
+      BankName: "",
       BankAddress: "",
       AccountName: "",
       AccountAddress: "",

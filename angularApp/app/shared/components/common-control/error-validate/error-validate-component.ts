@@ -18,9 +18,7 @@ export class ErrorvalidateComponent implements OnInit {
     get message(){
         console.log(this.control);
         for(let err in this.control.errors){
-            if(this.control.dirty){
-                return this.getError(err, this.control.errors[err]);
-            }
+            return this.getError(err, this.control.errors[err]);
         };
         return null;
     }
@@ -28,7 +26,8 @@ export class ErrorvalidateComponent implements OnInit {
         let mes={
             "required":"Required",
             "minlength":`Minleingth : ${value.requiredLength} character`,
-            "maxlength":`Maxleingth : ${value.requiredLength} character`,
+            "maxlength": `Maxleingth : ${value.requiredLength} character`,
+            "pattern": `Not valid ${value.requiredLength}!`,
         }
         return mes[err];
     }

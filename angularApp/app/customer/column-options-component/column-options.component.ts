@@ -121,32 +121,7 @@ export class CustomerColumnOptionsComponent implements OnInit {
     // console.log(this.form.valid);
   }
 
-  draggableListLeft = [
-      {
-          content: "Left1",
-          effectAllowed: "move",
-          disable: false,
-          handle: false,
-      },
-      {
-          content: "Lefter3",
-          effectAllowed: "move",
-          disable: false,
-          handle: false,
-      },
-      {
-          content: "Leftest4",
-          effectAllowed: "move",
-          disable: false,
-          handle: false
-      },
-      {
-          content: "Lefty2",
-          effectAllowed: "move",
-          disable: false,
-          handle: true,
-      }
-  ];
+
   onDragged(item:any, list:any[], effect:DropEffect) {
     
     console.log("drag ended: ", effect ," ", JSON.stringify(event, null, 2));

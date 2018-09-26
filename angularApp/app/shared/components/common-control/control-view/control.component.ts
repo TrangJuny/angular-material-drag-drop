@@ -10,5 +10,11 @@ import { ControlBase }     from '../control-definition/base.field';
 export class AppControlComponent {
   @Input() control: ControlBase<any>;
   @Input() form: FormGroup;
-  get isValid() { return this.form.controls[this.control.key].valid; }
+  
+  get isValid() { 
+    return this.form['submit']; 
+  }
+  get controlForm() { 
+    return this.form.controls[this.control.key]; 
+  }
 }

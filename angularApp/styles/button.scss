@@ -1,3 +1,4 @@
+
 .btn{
   font-size: 1.4rem;
   padding: .4rem 3rem;
@@ -14,39 +15,46 @@
  .fa{
       margin-right: .5rem;
   }
+
   &:disabled{
     opacity: .3;
   }
-
-}
-.btn-icon{
-  border:none;
-  background: none;
-  box-shadow: none;
-  padding: 0;
-  >*+*{
-      margin-left: 1rem;
-  }
-}
-
-.btn-primary{
-  background-color: $color-primary;
+  &.btn-primary{
+    background-color: $color-primary;  
+    color: $color-btn-text-primary;
   
-  &:hover,
-  &:focus  {
-    background-color : $color-btn-default-hover;
-
-  }
-}
-
-.btn-default{
-  background-color: $color-btn-default;
+    &:hover,
+    &:focus  {
+      background-color : $color-btn-primary-hover;
   
-  &:hover,
-  &:focus  {
-    background-color: $color-btn-primary-hover;    
+    }
   }
+  
+  &.btn-default{
+    background-color: $color-btn-default;
+    color: $color-btn-text-default;
+    
+    &:hover,
+    &:focus  {
+      background-color: $color-btn-default-hover;    
+    }
+  }
+  
+  &.btn-icon{
+    border:none;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+
+    >*+*{
+        margin-left: 1rem;
+    }
+
+    
+  }
+  
 }
+
 
 .action-container,
 .form-actions{
@@ -59,5 +67,11 @@
 
   &.right{
     justify-content: flex-end;
+  }
+}
+
+a:not([href]):not([tabindex]){
+  &.btn{
+    @extend .btn;
   }
 }
