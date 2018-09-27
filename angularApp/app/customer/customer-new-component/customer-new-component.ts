@@ -1,12 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-//import { Customer } from '../shared/customer-models/customer.model'
+import { Component, OnInit} from '@angular/core';
 import { CustomerServices } from '../shared/customer-services/customer.services';
 import { Customer } from "../shared/customer-models/customer.model";
-// import { ControlBase }              from '../../shared/components/common-control/control-definition/base.field';
-import { FormGroup,FormBuilder, Validators }                 from '@angular/forms';
-
-// import { DropdownColumnOption }     from '../../shared/components/common-control/control-definition/dropdown.field';
+import { FormGroup,FormBuilder, Validators }  from '@angular/forms';
 import { TextboxColumnOption }  from '../../shared/components/common-control/control-definition/textbox.field';
+
 
 @Component({
     selector: 'app-new-customer-component',
@@ -19,6 +16,7 @@ import { TextboxColumnOption }  from '../../shared/components/common-control/con
 export class NewCustomerComponent implements OnInit {
     //@Input() questions: ControlBase<any>[] = [];
   formPayInformation: FormGroup;
+  formCustomerInformation:FormGroup;
   payLoad = '';
   constructor(private qcs: CustomerServices,private fb: FormBuilder) {  }
   get f() { return this.formCustomer.controls; }
@@ -40,6 +38,130 @@ export class NewCustomerComponent implements OnInit {
       FaxNumber: [''],
     })
   });
+  getCustomerInformation() {
+
+    let controls: any[] = [      
+
+      new TextboxColumnOption({
+        key: 'CompanyName',
+        label: 'Company name',
+        value: null,
+        required: true,
+        order: 1
+      }),
+
+      new TextboxColumnOption({
+        key: 'CompanyPresident',
+        label: 'Company President',
+        value: null,
+        required: true,
+        order: 2
+      }),
+      new TextboxColumnOption({
+        key: 'BankAddress',
+        label: 'Bank Address',
+        value: null,
+        required: true,
+        order: 2
+      }),
+
+      new TextboxColumnOption({
+        key: 'IsHeadQuarter',
+        label: 'HeadQuarter',
+        value: null,
+        order: 3
+      }),
+
+      new TextboxColumnOption({
+        key: 'CompanyWebsite',
+        label: 'CompanyWebsite',
+        value: null,
+        order: 3
+      }),
+
+      new TextboxColumnOption({
+        key: 'Email',
+        label: 'Email',
+        value: null,
+        order: 3
+      }),
+
+      new TextboxColumnOption({
+        key: 'Description',
+        label: 'Description',
+        value: null,
+        order: 3
+      }),
+      
+      new TextboxColumnOption({
+        key: 'addressContact',
+        label: 'Address & Contact',
+        value: null,
+        order: 3,
+        parent:true,
+        children:[          
+          new TextboxColumnOption({
+            key: 'Address1',
+            label: 'Address 1',
+            value: null,
+            order: 3,
+            className:'col-4',
+          }),        
+
+          new TextboxColumnOption({
+            key: 'Address2',
+            label: 'Address 2',
+            value: null,
+            order: 3,
+            className:'col-4',
+          }),   
+
+          new TextboxColumnOption({
+            key: 'Country',
+            label: 'Country',
+            value: null,
+            order: 3,
+            className:'col-4',
+          }),
+          new TextboxColumnOption({
+            key: 'StateOrProvince',
+            label: 'State/Province',
+            value: null,
+            order: 3,
+            className:'col-4',
+          }),
+          new TextboxColumnOption({
+            key: 'ZipCode',
+            label: 'Zip/ Postal Code',
+            value: null,
+            order: 3,
+            className:'col-4',
+          }),
+          new TextboxColumnOption({
+            key: 'PhoneNumber',
+            label: 'Phone Number',
+            value: null,
+            order: 3,
+            className:'col-4',
+          }),
+          new TextboxColumnOption({
+            key: 'FaxNumber',
+            label: 'Fax Number',
+            value: null,
+            order: 3,
+            className:'col-4',
+          }),
+
+        ]
+      }),
+
+    ];
+
+    return controls.sort((a, b) => a.order - b.order);
+  }
+
+
+
   onSubmitCustomer(){}
   onSubmit() {
     // this.qcs.
@@ -194,8 +316,11 @@ export class NewCustomerComponent implements OnInit {
   }
 
   controlsPayInformation = this.getPayInformation();
+  controlsCustomerInformation = this.getCustomerInformation();
 
   ngOnInit() {
+    this.formCustomerInformation = this.qcs.toFormGroup(this.controlsCustomerInformation);
     this.formPayInformation = this.qcs.toFormGroup(this.controlsPayInformation);
   }
+
 }

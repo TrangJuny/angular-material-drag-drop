@@ -7,6 +7,7 @@ export class ControlBase<T> {
   controlType: string;
   parent: boolean;
   children: any[];
+  className: string;
   constructor(options: {
     value?: T,
     key?: string,
@@ -15,7 +16,8 @@ export class ControlBase<T> {
     order?: number,
     controlType?: string,
     parent?: boolean,
-    children?: any[]
+    children?: any[],
+    className?: string,
   } = {}) {
     this.value = options.value;
     this.key = options.key || '';
@@ -25,5 +27,6 @@ export class ControlBase<T> {
     this.controlType = options.controlType || '';
     this.parent= !!options.parent;
     this.children= options.children;
+    this.className=options.className;
   }
 }

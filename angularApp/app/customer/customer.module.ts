@@ -8,13 +8,20 @@ import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatTabsModule} from '@angular/material/tabs';
+
+import { DndModule } from 'ngx-drag-drop';
+
 import { CustomerColumnOptionsComponent } from './column-options-component/column-options.component';
 import { ColumnOptionsRowComponent } from './column-options-component/row/column-options-row.component';
 import { NewCustomerComponent } from './customer-new-component/customer-new-component';
 import { AppControlComponent } from '../shared/components/common-control/control-view/control.component';
 import { ErrorvalidateComponent } from '../shared/components/common-control/error-validate/error-validate-component';
-import {MatTabsModule} from '@angular/material/tabs';
-import { DndModule } from 'ngx-drag-drop';
+import { RadioComponent } from '../shared/components/common-control/control-view/radio';
+import { InputComponent } from '../shared/components/common-control/control-view/input';
+import {DropDownComponent} from '../shared/components/common-control/control-view/dropdown';
+import { CheckboxComponent } from '../shared/components/common-control/control-view/checkbox';
+
 
 @NgModule({
     imports: [
@@ -26,7 +33,8 @@ import { DndModule } from 'ngx-drag-drop';
         NgbModule,
         ReactiveFormsModule,
         DndModule,
-        MatTabsModule
+        MatTabsModule,
+        // MatFileUploadModule
     ],
     declarations: [
         CustomerComponent,
@@ -35,7 +43,11 @@ import { DndModule } from 'ngx-drag-drop';
         ColumnOptionsRowComponent,
         NewCustomerComponent,
         AppControlComponent,
-        ErrorvalidateComponent
+        ErrorvalidateComponent,
+        DropDownComponent,
+        InputComponent,
+        CheckboxComponent,
+        RadioComponent
     ],
 })
 

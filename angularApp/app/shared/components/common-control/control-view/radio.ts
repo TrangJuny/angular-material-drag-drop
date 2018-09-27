@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 @Component({
-    selector: 'radio',
+    selector: 'app-radio',
     template: `
       <div [formGroup]="form">
             <div class="form-check" *ngFor="let opt of control.options">

@@ -8,6 +8,7 @@ import { HomeModule } from './home/home.module';
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatFileUploadModule } from 'angular-material-fileupload';
 
 @NgModule({
     imports: [
@@ -18,6 +19,7 @@ import { ReactiveFormsModule } from '@angular/forms';
         HomeModule,
         BrowserAnimationsModule,
         ReactiveFormsModule,
+        MatFileUploadModule
     ],
 
     declarations: [

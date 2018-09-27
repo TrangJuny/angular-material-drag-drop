@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 @Component({
-    selector: 'checkbox',
+    selector: 'app-textbox',
     template: `
     <div [formGroup]="form" class="form-group" [ngSwitch]="control.controlType"  
         [ngClass]="form.value[control.key]==''?'empty':'has-value'">
@@ -10,7 +10,10 @@ import { FormGroup } from '@angular/forms';
         <input [formControlName]="control.key" class="form-control"
                 [id]="control.key" [type]="control.type">
 
-        <label [attr.for]="control.key" class="control-label">{{control.label}}</label>
+        <label [attr.for]="control.key" class="control-label">
+            {{control.label}}
+            <span class="text-red" *ngIf="control.required">*</span>
+        </label>
 
         <app-error-validate [control]="controlForm" 
         *ngIf="controlForm.touched || controlForm.dirty || form.submit"></app-error-validate>
@@ -18,7 +21,7 @@ import { FormGroup } from '@angular/forms';
     </div>
     `
 })
-export class CheckboxComponent {
+export class InputComponent {
     @Input() control: any = {};
     @Input() form: FormGroup;
     

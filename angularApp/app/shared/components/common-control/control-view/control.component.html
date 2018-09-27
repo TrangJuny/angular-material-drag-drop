@@ -1,14 +1,6 @@
-<div [formGroup]="form" class="form-group" [ngSwitch]="control.controlType"  [ngClass]="form.value[control.key]==''?'empty':'has-value'">
-      <!-- input -->
-      
-      <input *ngSwitchCase="'textbox'" [formControlName]="control.key" class="form-control" #fromControl
-              [id]="control.key" [type]="control.type">
-
-      <!-- select -->
-      <select *ngSwitchCase="'dropdown'" [id]="control.key" [formControlName]="control.key" class="form-control">
-        <option *ngFor="let opt of control.options" [value]="opt.key">{{opt.value}}</option>
-      </select>  
-
-    <label [attr.for]="control.key" class="control-label">{{control.label}}</label>
-    <app-error-validate [control]="controlForm" *ngIf="controlForm.touched || controlForm.dirty || form.submit"></app-error-validate>
-  </div>
+<div [ngSwitch]="control.controlType">
+      <app-textbox *ngSwitchCase="'textbox'" [control]="control" [form]="form"></app-textbox>
+      <app-dropdown *ngSwitchCase="'dropdown'" [control]="control" [form]="form"></app-dropdown>
+      <app-checkbox *ngSwitchCase="'checkbox'" [control]="control" [form]="form"></app-checkbox>
+      <app-radio *ngSwitchCase="'radio'" [control]="control" [form]="form"></app-radio>
+</div>

@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 @Component({
-    selector: 'checkbox',
+    selector: 'app-dropdown',
     template: `
     <div [formGroup]="form" class="form-group" [ngSwitch]="control.controlType"  
             [ngClass]="form.value[control.key]==''?'empty':'has-value'">
@@ -19,7 +19,7 @@ import { FormGroup } from '@angular/forms';
     </div>
     `
 })
-export class CheckboxComponent {
+export class DropDownComponent {
     @Input() control: any = {};
     @Input() form: FormGroup;
     

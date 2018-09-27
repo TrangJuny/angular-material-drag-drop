@@ -22,14 +22,14 @@ export class CustomerServices implements ICustomerServices {
     const headers = new Headers(
       {
         'Content-Type': 'application/json',
-        'accept': 'application/json, application/xml',
-        'crossDomain': true,
-        "http_api_response_headers": {
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "POST, GET, OPTIONS, DELETE, PUT"
-        }
+        'Accept': 'application/json, application/xml',
+        'crossDomain': true
       }
     );
+    headers.append('Accept', 'application/json');
+    headers.append('Access-Control-Allow-Origin', '*');
+    headers.append('Access-Control-Allow-Header', 'Content-Type');
+    headers.append('Access-Control-Allow-Methods', 'POST');
     this.options = new RequestOptions({ headers: headers });
   }
   public getAllCustomer(): Promise<Customer[]> {
@@ -47,32 +47,33 @@ export class CustomerServices implements ICustomerServices {
       .catch(this.handleError);
   }
 
+
   /**
    * addNewCustomer
    */
-  public addNewCustomer(customer: Customer): Promise<String> {
-    console.log(this.options);
-    const url = `${this.customerApiUrl}/Add`;
-    return this.http.post(url, customer , this.options)
-      .toPromise()
-      .then(response => response.json() as string)
-      .catch(this.handleError);
-  }
-  public toFormGroup(controls: ControlBase<any>[]) {
-    let group: any = {};
+  public addNewCustomer(customer: Customer): Promise < String > {
+  console.log(this.options);
+  const url = `${this.customerApiUrl}/Add`;
+  return this.http.post(url, customer, this.options)
+    .toPromise()
+    .then(response => response.json() as string)
+    .catch(this.handleError);
+}
+  public toFormGroup(controls: ControlBase < any > []) {
+  let group: any = {};
 
-    controls.forEach(control => {
-      if (!control.parent) {
-        group[control.key] = control.required ? new FormControl(control.value || '', Validators.required)
-          : new FormControl(control.value || '');
-      }
-      else {
-        group[control.key] = this.toFormGroup(control.children);
-      }
-    });
+  controls.forEach(control => {
+    if (!control.parent) {
+      group[control.key] = control.required ? new FormControl(control.value || '', Validators.required)
+        : new FormControl(control.value || '');
+    }
+    else {
+      group[control.key] = this.toFormGroup(control.children);
+    }
+  });
 
-    return new FormGroup(group);
-  }
+  return new FormGroup(group);
+}
 
 }
 
