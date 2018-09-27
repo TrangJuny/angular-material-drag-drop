@@ -322,5 +322,41 @@ export class NewCustomerComponent implements OnInit {
     this.formCustomerInformation = this.qcs.toFormGroup(this.controlsCustomerInformation);
     this.formPayInformation = this.qcs.toFormGroup(this.controlsPayInformation);
   }
+  resetUpload1: boolean;
+  resetUpload2: boolean;
+  resetUpload3: boolean;
+  token: string = "lkdjlfjld";
+  afuConfig1 = {
+    uploadAPI: {
+      url: "https://slack.com/api/files.upload"
+    }
+  };
 
+  afuConfig2 = {
+    theme: "attachPin",
+    hideProgressBar: "true",
+    hideResetBtn: "true",
+    maxSize: "1",
+    uploadAPI: {
+      url: "https://slack.com/api/files.upload",
+      headers: {
+        "Content-Type": "multipart/form-data"
+      }
+    },
+    formatsAllowed: ".jpg,.png",
+    multiple: "true"
+  };
+  afuConfig3 = {
+    theme: "dragNDrop",
+    hideProgressBar: true,
+    hideResetBtn: true,
+    hideSelectBtn: true,
+    maxSize: "1",
+    uploadAPI: {
+      url: "https://slack.com/api/files.upload"
+    },
+    formatsAllowed: ".jpg,.png",
+    multiple: true
+  };
+  
 }

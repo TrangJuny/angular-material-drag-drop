@@ -1,24 +1,14 @@
 ﻿<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 
+
+
 <div class="tab-panel bg-white">
     <h2 class="title-tab-panel">Create New</h2>
     <mat-tab-group  #tabGroup>
         <mat-tab label="Customer information"> 
             <ng-template matTabContent>
                 <div class="content-tab-title">Customer information</div>
-                <div [fileUploadInputFor]="fileUploadQueue" class="upload-drop-zone">
-                    Just drag and drop files here
-                </div>
                 
-                
-                <div style="width: 500px">
-                    <mat-file-upload-queue #fileUploadQueue
-                        [fileAlias]="'file'"
-                        [httpUrl]="'http://localhost:8080/jax-rs-jersey-application-sample'" multiple>
-                    
-                        <mat-file-upload [file]="file" [id]="i" *ngFor="let file of fileUploadQueue.files; let i = index"></mat-file-upload>
-                    </mat-file-upload-queue>
-                </div>
 
                 <div class="row">
                     <div class="col-4">
