@@ -1,0 +1,20 @@
+ 
+<section dndDropzone
+dndEffectAllowed="copyMove"
+(dndDrop)="onDrop($event, columnMetadata)">
+      
+<div *ngFor="let column of columnMetadata; let i = index" 
+[dndEffectAllowed]="'move'"
+[dndDraggable]="column"
+(dndCopied)="onDragged(column, columnMetadata, 'copy')"
+(dndLinked)="onDragged(column, columnMetadata, 'link')"
+(dndMoved)="onDragged(column, columnMetadata, 'move')"
+(dndCanceled)="onDragged(column, columnMetadata, 'none')"
+>
+ <div dndPlaceholderRef
+      class="dndPlaceholder">
+ </div>
+     test {{column.content}}
+</div>
+ 
+</section>
